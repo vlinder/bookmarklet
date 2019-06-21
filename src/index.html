@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bookmarklet</title>
+    <meta
+      name="description"
+      content="Create or decode your bookmarklet here."
+    />
+    <link rel="stylesheet" href="./styles.css?v=1.0" />
+  </head>
+
+  <body>
+    <h1>Bookmarklet toolbox</h1>
+
+    <p>Input options</p>
+    <options>
+      <label>
+        <input type="radio" name="inputType" value="auto" />
+        <span>Automatic</span>
+      </label>
+      <label>
+        <input type="radio" name="inputType" value="code" checked />
+        <span>Code</span>
+      </label>
+      <label>
+        <input type="radio" name="inputType" value="min-code" />
+        <span>Minifide code</span>
+      </label>
+      <label>
+        <input type="radio" name="inputType" value="bookmarklet" />
+        <span>Bookmarklet</span>
+      </label>
+    </options>
+
+    <p>Output options</p>
+    <options>
+      <label>
+        <input type="radio" name="outputType" value="code" />
+        <span>Code</span>
+      </label>
+      <label>
+        <input type="radio" name="outputType" value="min-code" checked />
+        <span>Minifide code</span>
+      </label>
+      <label>
+        <input type="radio" name="outputType" value="bookmarklet" />
+        <span>Bookmarklet</span>
+      </label>
+    </options>
+
+    <a id="bookmarklet">Bookmarklet</a>
+
+    <editors>
+      <div id="input"></div>
+      <div id="output"></div>
+    </editors>
+
+    <script>
+      // Around about way to import the uglify script.
+      // Need to hide it from parcel.
+      var uglifyScript = document.createElement("script");
+      uglifyScript.src = "uglify.js";
+      uglifyScript.id = "uglifyScript";
+      document.head.appendChild(uglifyScript);
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
